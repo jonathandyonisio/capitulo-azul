@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="guestbook.css">
 </head>
 <body>
   <main id="journey">
@@ -101,19 +102,45 @@
         <button class="album-link" id="open-album" type="button">Explorar o álbum completo <span aria-hidden="true">↗</span></button>
       </section>
       <section class="guestbook-section" id="guestbook" aria-labelledby="guestbook-title">
-        <div class="guestbook-content reveal-on-view">
-          <p class="chapter-label">PALAVRAS QUE FICAM</p>
-          <h2 id="guestbook-title">Deixe um recado<br>para <em>nós.</em></h2>
-          <p class="guestbook-intro">Sua mensagem também fará parte deste capítulo.</p>
-          <form class="guestbook-form" id="guestbook-form">
-            <label for="guest-name">Seu nome</label>
-            <input id="guest-name" name="name" type="text" autocomplete="name" maxlength="60" required>
-            <label for="guest-message">Seu recado</label>
-            <textarea id="guest-message" name="message" rows="4" maxlength="500" required></textarea>
-            <button class="gold-button" type="submit">Enviar recado <span aria-hidden="true">↗</span></button>
-            <p class="guestbook-status" id="guestbook-status" role="status" aria-live="polite"></p>
-          </form>
-          <div class="guestbook-list" id="guestbook-list" aria-live="polite"></div>
+        <div class="guestbook-inner reveal-on-view">
+          <div class="guestbook-heading">
+            <p class="chapter-label">AS PALAVRAS DE QUEM CAMINHA COM A GENTE</p>
+            <h2 id="guestbook-title">Um céu feito de <em>recados.</em></h2>
+            <p>Cada palavra deixada aqui acende uma pequena luz na nossa história.</p>
+          </div>
+          <div class="guestbook-layout">
+            <div class="guestbook-letter">
+              <div class="letter-heading"><span>UMA CARTA PARA NÓS</span><span aria-hidden="true">✦</span></div>
+              <p class="letter-prompt">Conte o que seu coração gostaria que a gente guardasse.</p>
+              <form class="guestbook-form" id="guestbook-form">
+                <label for="guest-name">Seu nome</label>
+                <input id="guest-name" name="name" type="text" autocomplete="name" placeholder="Como te chamamos?" maxlength="60" required>
+                <label for="guest-message">Sua mensagem</label>
+                <textarea id="guest-message" name="message" rows="4" placeholder="Escreva com calma. Esta palavra fica com a gente…" maxlength="500" required></textarea>
+                <button class="letter-send" type="submit">Acender minha estrela <span aria-hidden="true">✧</span></button>
+                <p class="guestbook-status" id="guestbook-status" role="status" aria-live="polite"></p>
+              </form>
+              <span class="letter-signoff">Com carinho, um pedacinho de você.</span>
+            </div>
+            <div class="guestbook-observatory">
+              <div class="guestbook-sky is-empty" role="group" aria-label="Estrelas dos recados">
+                <svg class="guestbook-lines" id="guestbook-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+                <div class="guestbook-stars" id="guestbook-stars"></div>
+                <span class="sky-whisper" aria-hidden="true">toque uma luz para ler</span>
+              </div>
+              <article class="guestbook-note" id="guestbook-note" aria-live="polite">
+                <span class="note-quote" aria-hidden="true">“</span>
+                <p id="guestbook-message">As primeiras palavras ainda estão a caminho. Que a sua seja a primeira luz deste céu.</p>
+                <footer><span id="guestbook-name">Thais &amp; Jonathan</span><span aria-hidden="true">✧</span></footer>
+              </article>
+              <div class="guestbook-controls">
+                <button id="previous-message" type="button" aria-label="Recado anterior" disabled>←</button>
+                <span id="guestbook-counter" aria-live="polite">A primeira pode ser sua</span>
+                <button id="next-message" type="button" aria-label="Próximo recado" disabled>→</button>
+              </div>
+              <button class="guestbook-refresh" id="refresh-messages" type="button">↻ Ver novos recados</button>
+            </div>
+          </div>
         </div>
       </section>
       <section class="wish-section" id="wish" aria-labelledby="wish-title">
