@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="experience.css">
 </head>
 <body>
   <main id="journey">
@@ -46,38 +47,82 @@
           <div class="divider" aria-hidden="true">✦</div>
           <blockquote>“Acima de tudo, porém, revistam-se do amor,<br>que é o elo perfeito.”<cite>COLOSSENSES 3:14</cite></blockquote>
           <p class="signature">Com carinho, Thais e Jonathan</p>
-          <button class="response-link" id="show-response" type="button" aria-controls="response" aria-expanded="false">Responder ao convite <span aria-hidden="true">↗</span></button>
+          <button class="story-link" id="show-story" type="button" aria-controls="our-universe" aria-expanded="false">O envelope guardava mais uma coisa <span aria-hidden="true">✧</span></button>
         </article>
         <div class="envelope-pocket envelope-piece" aria-hidden="true"></div>
         <div class="envelope-flap envelope-piece" aria-hidden="true"></div>
         <button class="envelope-trigger" id="reveal" type="button" aria-label="Abrir envelope" aria-controls="invitation" aria-expanded="false"><span>TOQUE PARA ABRIR</span></button>
       </div>
     </div>
-    <section class="response-section" id="response" aria-labelledby="response-title" hidden>
-      <div class="response-card">
-        <p class="response-eyebrow">UMA CARTA DE VOLTA</p>
-        <h2 id="response-title">Sua presença é<br><em>um presente.</em></h2>
-        <p class="response-intro">Conte se estará conosco. Se quiser, deixe também uma bênção para este novo capítulo.</p>
-        <form id="response-form">
-          <label class="field-label" for="guest-name">Seu nome</label>
-          <input id="guest-name" name="guest-name" type="text" autocomplete="name" maxlength="100" required placeholder="Como podemos chamar você?">
-          <fieldset>
-            <legend>Você estará conosco?</legend>
-            <div class="attendance-options">
-              <label><input type="radio" name="attendance" value="Sim, estarei presente" required><span>Sim, estarei lá</span></label>
-              <label><input type="radio" name="attendance" value="Não poderei comparecer"><span>Não poderei ir</span></label>
-            </div>
-          </fieldset>
-          <label class="field-label" for="guest-message">Uma bênção para os noivos <small>(opcional)</small></label>
-          <textarea id="guest-message" name="guest-message" rows="4" maxlength="500" placeholder="Uma oração, desejo ou conselho cheio de carinho..."></textarea>
-          <button class="send-response" id="send-response" type="submit">Abrir WhatsApp para enviar <span aria-hidden="true">✦</span></button>
-          <p class="response-status" id="response-status" role="status" aria-live="polite"></p>
-        </form>
-        <p class="response-signature">Com carinho, Thais &amp; Jonathan</p>
-      </div>
-    </section>
+    <div class="universe" id="our-universe" hidden>
+      <div class="universe-grain" aria-hidden="true"></div>
+      <nav class="universe-nav" aria-label="Nossa história">
+        <button id="back-invitation" type="button">← <span>O convite</span></button>
+        <span class="universe-monogram" aria-label="Thais e Jonathan">T <i>&amp;</i> J</span>
+        <button id="sound-toggle" type="button" aria-pressed="false">♫ <span>Ativar som</span></button>
+      </nav>
+      <section class="universe-opening" aria-labelledby="universe-title">
+        <div class="orbit" id="orbit" aria-label="Algumas das nossas lembranças"></div>
+        <div class="universe-heading">
+          <p class="chapter-label">UM CAPÍTULO AZUL · THAIS &amp; JONATHAN</p>
+          <h2 id="universe-title" tabindex="-1">Era um encontro.<br>Virou <em>um universo.</em></h2>
+          <p>Entre tantos caminhos, a gente escolheu<br>continuar caminhando junto.</p>
+        </div>
+        <a class="discover-story" href="#little-infinities"><span>CONTINUE ESSA HISTÓRIA</span><span class="scroll-thread" aria-hidden="true"></span></a>
+        <span class="orbit-note">Cada fotografia guarda um pedacinho de nós.</span>
+      </section>
+      <section class="together" id="little-infinities" aria-labelledby="together-title">
+        <div class="together-photo reveal-on-view">
+          <img data-src="assets/memories/memory-34.webp" width="900" height="1200" alt="Thais e Jonathan de mãos dadas ao pôr do sol" decoding="async">
+          <span class="photo-corner" aria-hidden="true">01 / NÓS DOIS</span>
+        </div>
+        <div class="together-copy reveal-on-view">
+          <p class="chapter-label">O EXTRAORDINÁRIO MORA AQUI</p>
+          <h2 id="together-title">Nas coisas pequenas.<br>Nos dias comuns.<br><em>Em nós.</em></h2>
+          <p>Um passeio sem pressa. Uma risada no meio do caminho. Um abraço que faz qualquer lugar parecer casa.</p>
+          <p>O amor foi encontrando espaço em cada detalhe. E, quando percebemos, já havia uma vida inteira que queríamos compartilhar.</p>
+          <span class="handwritten">Que bom que a vida trouxe você.</span>
+          <div class="small-print"><img data-src="assets/memories/memory-73.webp" width="300" height="340" alt="Um beijo e um sorriso durante um passeio juntos" decoding="async"><span>É aqui que a gente quer ficar.</span></div>
+        </div>
+      </section>
+      <section class="memories-section" id="memories" aria-labelledby="memories-title">
+        <div class="memories-heading reveal-on-view">
+          <p class="chapter-label">FRAGMENTOS DA NOSSA HISTÓRIA</p>
+          <h2 id="memories-title">74 pequenos <em>infinitos.</em></h2>
+          <p>Sozinhas, são fotografias. Juntas…</p>
+          <button class="gold-button" id="gather-memories" type="button" aria-pressed="false">Junte nossos momentos <span aria-hidden="true">♡</span></button>
+        </div>
+        <div class="memory-stage" id="memory-stage" aria-label="Álbum de 74 lembranças. Toque em uma foto para ampliar.">
+          <div class="heart-halo" aria-hidden="true"></div>
+          <div class="memory-cloud" id="memory-cloud"></div>
+        </div>
+        <p class="memory-caption" id="memory-caption" aria-live="polite">Toque em uma fotografia. Reviva um instante com a gente.</p>
+        <button class="album-link" id="open-album" type="button">Explorar o álbum completo <span aria-hidden="true">↗</span></button>
+      </section>
+      <section class="wish-section" id="wish" aria-labelledby="wish-title">
+        <canvas id="wish-sky" aria-hidden="true"></canvas>
+        <div class="wish-content reveal-on-view">
+          <p class="chapter-label">E A HISTÓRIA CONTINUA</p>
+          <h2 id="wish-title">O próximo capítulo<br>também tem <em>você.</em></h2>
+          <p>Antes de ir, pense em algo bonito para nós.<br>Uma oração, um desejo, uma vida cheia de amor.</p>
+          <button class="wish-button" id="make-wish" type="button" aria-label="Acender uma estrela para Thais e Jonathan"><span class="wish-star" aria-hidden="true">✧</span><span id="wish-button-label">Acenda uma estrela</span></button>
+          <p class="wish-reply" id="wish-reply" role="status" aria-live="polite">Há desejos que não precisam de palavras.</p>
+          <div class="closing-date"><span>ENCONTRAMOS VOCÊ EM</span><strong>21.11.2026</strong><span>SÁBADO · ÀS 17H</span></div>
+          <div class="event-actions"><button id="save-date" type="button">Guardar na agenda ↗</button><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Cortega%C3%A7a+97+Jardim+Guaruj%C3%A1+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div>
+          <p class="closing-signature">Com amor, <span>Thais &amp; Jonathan</span></p>
+          <span class="closing-note">E que Deus escreva os próximos capítulos.</span>
+        </div>
+      </section>
+    </div>
   </main>
-  <noscript><style>.intro,.envelope-piece,.envelope-trigger{display:none}.stationery{position:relative;top:auto;left:auto;transform:none;width:min(90%,480px);height:auto;margin:40px auto}.invitation{position:relative;top:auto;left:auto;width:100%;opacity:1;transform:none;visibility:visible}.scene{height:auto}</style></noscript>
+  <dialog class="photo-dialog" id="photo-dialog" aria-label="Álbum de Thais e Jonathan">
+    <div class="viewer-top"><span>UM INSTANTE NOSSO</span><button id="close-photo" type="button" aria-label="Fechar fotografia">✕</button></div>
+    <div class="viewer-frame"><img id="viewer-image" alt=""><p id="viewer-status" role="status"></p></div>
+    <div class="viewer-controls"><button id="previous-photo" type="button" aria-label="Foto anterior">←</button><span id="photo-counter" aria-live="polite"></span><button id="next-photo" type="button" aria-label="Próxima foto">→</button></div>
+  </dialog>
+  <noscript><style>.story-link{display:none}.intro,.envelope-piece,.envelope-trigger{display:none}.stationery{position:relative;top:auto;left:auto;transform:none;width:min(90%,480px);height:auto;margin:40px auto}.invitation{position:relative;top:auto;left:auto;width:100%;opacity:1;transform:none;visibility:visible}.scene{height:auto}</style></noscript>
   <script src="app.js"></script>
+  <script src="memories.js" defer></script>
+  <script src="experience.js" defer></script>
 </body>
 </html>
