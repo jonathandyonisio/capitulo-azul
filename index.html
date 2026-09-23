@@ -30,6 +30,7 @@
   <main id="journey">
     <div class="scene">
       <div class="ambient" aria-hidden="true"></div>
+      <button class="scene-sound-toggle" id="scene-sound-toggle" type="button" aria-pressed="false">♫ <span>Ativar música</span></button>
       <section class="intro" id="intro" aria-labelledby="intro-title">
         <p class="eyebrow">PARA VOCÊ, COM CARINHO</p>
         <h1 id="intro-title">Algumas histórias<br>merecem um <em>novo capítulo.</em></h1>
@@ -111,6 +112,7 @@
           <div class="event-actions"><button id="save-date" type="button">Guardar na agenda ↗</button><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Cortega%C3%A7a+97+Jardim+Guaruj%C3%A1+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div>
           <p class="closing-signature">Com amor, <span>Thais &amp; Jonathan</span></p>
           <span class="closing-note">E que Deus escreva os próximos capítulos.</span>
+          <span class="track-credit">Amor Sem Medida · Matheus &amp; Kauan</span>
         </div>
       </section>
     </div>
@@ -120,7 +122,8 @@
     <div class="viewer-frame"><img id="viewer-image" alt=""><p id="viewer-status" role="status"></p></div>
     <div class="viewer-controls"><button id="previous-photo" type="button" aria-label="Foto anterior">←</button><span id="photo-counter" aria-live="polite"></span><button id="next-photo" type="button" aria-label="Próxima foto">→</button></div>
   </dialog>
-  <noscript><style>.story-link{display:none}.intro,.envelope-piece,.envelope-trigger{display:none}.stationery{position:relative;top:auto;left:auto;transform:none;width:min(90%,480px);height:auto;margin:40px auto}.invitation{position:relative;top:auto;left:auto;width:100%;opacity:1;transform:none;visibility:visible}.scene{height:auto}</style></noscript>
+  <audio id="chapter-audio" src="assets/amor-sem-medida.mp3" preload="none" loop></audio>
+  <noscript><style>.story-link,.scene-sound-toggle{display:none}.intro,.envelope-piece,.envelope-trigger{display:none}.stationery{position:relative;top:auto;left:auto;transform:none;width:min(90%,480px);height:auto;margin:40px auto}.invitation{position:relative;top:auto;left:auto;width:100%;opacity:1;transform:none;visibility:visible}.scene{height:auto}</style></noscript>
   <script src="app.js"></script>
   <script src="memories.js" defer></script>
   <script src="experience.js" defer></script>

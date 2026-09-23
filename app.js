@@ -35,6 +35,7 @@
     intro.inert = true;
     intro.setAttribute('aria-hidden', 'true');
     scene.classList.add('opened');
+    document.dispatchEvent(new Event('chapter:opened'));
     if (reduced.matches) finish();
     else {
       invitation.addEventListener('animationend', (event) => {

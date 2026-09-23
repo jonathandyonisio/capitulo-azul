@@ -32,3 +32,8 @@ button:focus-visible,a:focus-visible{outline:2px solid #cbb388;outline-offset:5p
 .album-link{background:none;border:0;border-bottom:1px solid #cbb38855;padding:13px 2px;margin-top:10px;color:#d5c29d;font:11px Manrope,sans-serif;cursor:pointer;min-height:44px}
 .album-link span{margin-left:8px}
 @media(max-width:700px){.universe-nav{margin-bottom:-72px}.memory-stage{width:98vw;aspect-ratio:1.06}}
+.scene-sound-toggle{position:absolute;top:20px;right:clamp(16px,4vw,55px);z-index:9;border:1px solid #27415366;border-radius:30px;background:#f8f3e8cb;color:#193d47;padding:9px 13px;font:600 10px Manrope,sans-serif;cursor:pointer;backdrop-filter:blur(5px)}
+.scene-sound-toggle:hover{background:#f8f3e8}
+.track-credit{display:block;margin-top:24px;color:#84949a;font:9px Manrope,sans-serif;letter-spacing:.08em}
+@media(max-width:600px){.scene-sound-toggle{top:12px;right:12px;padding:8px 10px;font-size:9px}}
+@media print{.scene-sound-toggle{display:none}}

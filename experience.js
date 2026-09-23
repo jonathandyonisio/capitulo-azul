@@ -138,52 +138,34 @@
     $('#little-infinities').scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth' });
   });
 
-  // A quiet original ambience. No audio is created or played before a deliberate click.
-  let audioContext;
-  let master;
-  let soundOn = false;
-  let musicTimer;
-  let noteIndex = 0;
-  const melody = [261.63, 329.63, 392, 493.88, 440, 392, 329.63, 293.66];
-  function playNote() {
-    if (!audioContext || !soundOn || document.hidden) return;
-    const now = audioContext.currentTime;
-    const oscillator = audioContext.createOscillator();
-    const volume = audioContext.createGain();
-    oscillator.type = 'sine';
-    oscillator.frequency.value = melody[noteIndex++ % melody.length] / 2;
-    volume.gain.setValueAtTime(0, now);
-    volume.gain.linearRampToValueAtTime(.16, now + .15);
-    volume.gain.exponentialRampToValueAtTime(.001, now + 3.8);
-    oscillator.connect(volume).connect(master);
-    oscillator.start(now); oscillator.stop(now + 4);
-    oscillator.onended = () => { oscillator.disconnect(); volume.disconnect(); };
+  // The supplied recording starts with the guest's envelope click; sound can be paused anywhere.
+  const recording = $('#chapter-audio');
+  const musicButtons = [$('#scene-sound-toggle'), $('#sound-toggle')];
+  let visitorPaused = false;
+  let hasOpened = false;
+  function updateMusicButtons() {
+    const playing = !recording.paused;
+    musicButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(playing));
+      button.innerHTML = `♫ <span>${playing ? 'Pausar música' : 'Ativar música'}</span>`;
+    });
   }
-  $('#sound-toggle').addEventListener('click', async () => {
-    const button = $('#sound-toggle');
-    try {
-      if (!audioContext) {
-        const Audio = window.AudioContext || window.webkitAudioContext;
-        if (!Audio) throw new Error('Audio unavailable');
-        audioContext = new Audio();
-        master = audioContext.createGain(); master.gain.value = .45; master.connect(audioContext.destination);
-      }
-      soundOn = !soundOn;
-      clearInterval(musicTimer);
-      if (soundOn) { await audioContext.resume(); playNote(); musicTimer = setInterval(playNote, 1450); }
-      else await audioContext.suspend();
-      button.setAttribute('aria-pressed', String(soundOn));
-      button.innerHTML = `♫ <span>${soundOn ? 'Silenciar' : 'Ativar som'}</span>`;
-    } catch {
-      soundOn = false;
-      button.setAttribute('aria-pressed', 'false');
-      button.innerHTML = '♫ <span>Som indisponível</span>';
-    }
-  });
+  async function startMusic() {
+    if (visitorPaused || !recording.paused) return;
+    try { await recording.play(); } catch { /* The controls remain available if autoplay is blocked. */ }
+    updateMusicButtons();
+  }
+  document.addEventListener('chapter:opened', () => { hasOpened = true; startMusic(); });
+  musicButtons.forEach((button) => button.addEventListener('click', async () => {
+    if (recording.paused) { visitorPaused = false; await startMusic(); }
+    else { visitorPaused = true; recording.pause(); }
+    updateMusicButtons();
+  }));
+  recording.addEventListener('play', updateMusicButtons);
+  recording.addEventListener('pause', updateMusicButtons);
   document.addEventListener('visibilitychange', () => {
-    if (!audioContext) return;
-    if (document.hidden) audioContext.suspend().catch(() => {});
-    else if (soundOn) audioContext.resume().catch(() => {});
+    if (document.hidden && !recording.paused) recording.pause();
+    else if (!document.hidden && hasOpened && !visitorPaused) startMusic();
   });
 
   function initializeSky() {
