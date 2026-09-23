@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091d30">
+  <meta name="description" content="Há algo especial guardado aqui. Uma surpresa feita para você.">
+  <title>Algo especial para você</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23091d30'/%3E%3Cpath d='M6 10h20v14H6zM6 10l10 8 10-8' fill='none' stroke='%23c5af85' stroke-width='1.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="journey">
+    <div class="scene">
+      <div class="ambient" aria-hidden="true"></div>
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">PARA VOCÊ, COM CARINHO</p>
+        <h1 id="intro-title">Algumas histórias<br>merecem um <em>novo capítulo.</em></h1>
+        <p class="intro-copy">Há algo especial guardado aqui.</p>
+      </section>
+      <div class="stationery" id="stationery">
+        <div class="envelope-back envelope-piece" aria-hidden="true"></div>
+        <article class="invitation" id="invitation" aria-labelledby="names">
+          <div class="paper-border"></div>
+          <p class="eyebrow">COM AMOR E A BÊNÇÃO DE DEUS</p>
+          <h2 id="names">Thais <span>&amp;</span> Jonathan</h2>
+          <p class="invitation-copy">Vamos noivar!<br>Será ainda mais especial ter você conosco.</p>
+          <div class="date"><span>SÁBADO</span><strong>21 <i>/</i> 11 <i>/</i> 2026</strong><span>ÀS 16H</span></div>
+          <div class="place"><p>Rua Cortegaça, 97</p><p>Jardim Guarujá · SP</p></div>
+          <div class="divider" aria-hidden="true">✦</div>
+          <blockquote>“Acima de tudo, porém, revistam-se do amor,<br>que é o elo perfeito.”<cite>COLOSSENSES 3:14</cite></blockquote>
+          <p class="signature">Com carinho, Thais e Jonathan</p>
+          <button class="response-link" id="show-response" type="button" aria-controls="response" aria-expanded="false">Responder ao convite <span aria-hidden="true">↗</span></button>
+        </article>
+        <div class="envelope-pocket envelope-piece" aria-hidden="true"></div>
+        <div class="envelope-flap envelope-piece" aria-hidden="true"></div>
+        <button class="envelope-trigger" id="reveal" type="button" aria-label="Abrir envelope" aria-controls="invitation" aria-expanded="false"><span>TOQUE PARA ABRIR</span></button>
+      </div>
+    </div>
+    <section class="response-section" id="response" aria-labelledby="response-title" hidden>
+      <div class="response-card">
+        <p class="response-eyebrow">UMA CARTA DE VOLTA</p>
+        <h2 id="response-title">Sua presença é<br><em>um presente.</em></h2>
+        <p class="response-intro">Conte se estará conosco. Se quiser, deixe também uma bênção para este novo capítulo.</p>
+        <form id="response-form">
+          <label class="field-label" for="guest-name">Seu nome</label>
+          <input id="guest-name" name="guest-name" type="text" autocomplete="name" maxlength="100" required placeholder="Como podemos chamar você?">
+          <fieldset>
+            <legend>Você estará conosco?</legend>
+            <div class="attendance-options">
+              <label><input type="radio" name="attendance" value="Sim, estarei presente" required><span>Sim, estarei lá</span></label>
+              <label><input type="radio" name="attendance" value="Não poderei comparecer"><span>Não poderei ir</span></label>
+            </div>
+          </fieldset>
+          <label class="field-label" for="guest-message">Uma bênção para os noivos <small>(opcional)</small></label>
+          <textarea id="guest-message" name="guest-message" rows="4" maxlength="500" placeholder="Uma oração, desejo ou conselho cheio de carinho..."></textarea>
+          <button class="send-response" id="send-response" type="submit">Abrir WhatsApp para enviar <span aria-hidden="true">✦</span></button>
+          <p class="response-status" id="response-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="response-signature">Com carinho, Thais &amp; Jonathan</p>
+      </div>
+    </section>
+  </main>
+  <noscript><style>.intro,.envelope-piece,.envelope-trigger{display:none}.stationery{position:relative;top:auto;left:auto;transform:none;width:min(90%,480px);height:auto;margin:40px auto}.invitation{position:relative;top:auto;left:auto;width:100%;opacity:1;transform:none;visibility:visible}.scene{height:auto}</style></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
