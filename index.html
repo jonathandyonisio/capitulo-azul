@@ -100,6 +100,22 @@
         <p class="memory-caption" id="memory-caption" aria-live="polite">Toque em uma fotografia. Reviva um instante com a gente.</p>
         <button class="album-link" id="open-album" type="button">Explorar o álbum completo <span aria-hidden="true">↗</span></button>
       </section>
+      <section class="guestbook-section" id="guestbook" aria-labelledby="guestbook-title">
+        <div class="guestbook-content reveal-on-view">
+          <p class="chapter-label">PALAVRAS QUE FICAM</p>
+          <h2 id="guestbook-title">Deixe um recado<br>para <em>nós.</em></h2>
+          <p class="guestbook-intro">Sua mensagem também fará parte deste capítulo.</p>
+          <form class="guestbook-form" id="guestbook-form">
+            <label for="guest-name">Seu nome</label>
+            <input id="guest-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+            <label for="guest-message">Seu recado</label>
+            <textarea id="guest-message" name="message" rows="4" maxlength="500" required></textarea>
+            <button class="gold-button" type="submit">Enviar recado <span aria-hidden="true">↗</span></button>
+            <p class="guestbook-status" id="guestbook-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="guestbook-list" id="guestbook-list" aria-live="polite"></div>
+        </div>
+      </section>
       <section class="wish-section" id="wish" aria-labelledby="wish-title">
         <canvas id="wish-sky" aria-hidden="true"></canvas>
         <div class="wish-content reveal-on-view">
@@ -127,5 +143,6 @@
   <script src="app.js"></script>
   <script src="memories.js" defer></script>
   <script src="experience.js" defer></script>
+  <script src="guestbook.js" defer></script>
 </body>
 </html>
