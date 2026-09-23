@@ -1,0 +1,22 @@
+.rsvp-section{position:relative;padding:43px 22px 76px;background:#071725;border-top:1px solid #d4ba8b24;color:#e9e4d9;text-align:center}
+.rsvp-inner{width:min(430px,100%);margin:auto}
+.rsvp-mark{display:block;color:#cbb483;font:29px Georgia,serif;margin-bottom:9px}
+.rsvp-overline{margin:0 0 13px;color:#b9a77f;font:500 9px Manrope,sans-serif;letter-spacing:.22em}
+.rsvp-section h2{font:400 clamp(31px,4vw,43px)/1.1 'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em;margin:0 0 10px}
+.rsvp-section h2 em{color:#d6bc8a;font-weight:400}
+.rsvp-intro{font:12px/1.7 Manrope,sans-serif;color:#aebcc1;margin:0 0 27px}
+.rsvp-form{text-align:left}
+.rsvp-form>label,.rsvp-form legend{display:block;font:italic 18px 'Cormorant Garamond',Georgia,serif;color:#d4c7ae;margin-bottom:7px}
+.rsvp-form>input{width:100%;box-sizing:border-box;border:0;border-bottom:1px solid #c6b18178;border-radius:0;padding:10px 0 12px;background:transparent;color:#f6f1e8;font:12px Manrope,sans-serif;outline:none}
+.rsvp-form>input::placeholder{color:#82949b}
+.rsvp-form>input:focus{border-color:#dfc796}
+.rsvp-form fieldset{border:0;padding:0;margin:24px 0 21px}
+.rsvp-form legend{margin-bottom:13px}
+.rsvp-choice{display:inline-flex;align-items:center;gap:8px;margin:0 22px 12px 0;color:#cbd3d3;font:11px Manrope,sans-serif;cursor:pointer}
+.rsvp-choice input{width:16px;height:16px;margin:0;accent-color:#cbb483}
+.rsvp-form button{border:0;border-bottom:1px solid #cbb483aa;padding:7px 0;background:transparent;color:#e8d3a7;font:11px Manrope,sans-serif;cursor:pointer}
+.rsvp-form button span{margin-left:7px}
+.rsvp-form button:hover{color:#fff1cc;border-color:#fff1cc}
+.rsvp-form button:disabled{opacity:.55;cursor:wait}
+.rsvp-status{min-height:20px;margin:13px 0 0;color:#bfcaba;font:11px/1.6 Manrope,sans-serif}
+@media(max-width:700px){.rsvp-section{padding:38px 26px 66px}.rsvp-choice{display:flex;margin-right:0}}

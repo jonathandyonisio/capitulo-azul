@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="experience.css">
   <link rel="stylesheet" href="guestbook.css">
+  <link rel="stylesheet" href="rsvp.css">
 </head>
 <body>
   <main id="journey">
@@ -41,7 +42,7 @@
         <div class="envelope-back envelope-piece" aria-hidden="true"></div>
         <article class="invitation" id="invitation" aria-labelledby="names">
           <div class="paper-border"></div>
-          <p class="eyebrow">COM AMOR E A BÊNÇÃO DE DEUS</p>
+          <p class="eyebrow">CONVITE PARA O NOSSO NOIVADO</p>
           <h2 id="names">Thais <span>&amp;</span> Jonathan</h2>
           <p class="invitation-copy">Vamos noivar!<br>Será ainda mais especial ter você conosco.</p>
           <div class="date"><span>SÁBADO</span><strong>21 <i>/</i> 11 <i>/</i> 2026</strong><span>ÀS 17H</span></div>
@@ -66,7 +67,7 @@
       <section class="universe-opening" aria-labelledby="universe-title">
         <div class="orbit" id="orbit" aria-label="Algumas das nossas lembranças"></div>
         <div class="universe-heading">
-          <p class="chapter-label">UM CAPÍTULO AZUL · THAIS &amp; JONATHAN</p>
+          <p class="chapter-label">NOSSO NOIVADO · THAIS &amp; JONATHAN</p>
           <h2 id="universe-title" tabindex="-1">Era um encontro.<br>Virou <em>um universo.</em></h2>
           <p>Entre tantos caminhos, a gente escolheu<br>continuar caminhando junto.</p>
         </div>
@@ -151,11 +152,30 @@
           <p>Antes de ir, pense em algo bonito para nós.<br>Uma oração, um desejo, uma vida cheia de amor.</p>
           <button class="wish-button" id="make-wish" type="button" aria-label="Acender uma estrela para Thais e Jonathan"><span class="wish-star" aria-hidden="true">✧</span><span id="wish-button-label">Acenda uma estrela</span></button>
           <p class="wish-reply" id="wish-reply" role="status" aria-live="polite">Há desejos que não precisam de palavras.</p>
-          <div class="closing-date"><span>ENCONTRAMOS VOCÊ EM</span><strong>21.11.2026</strong><span>SÁBADO · ÀS 17H</span></div>
+          <div class="closing-date"><span>CELEBRAMOS NOSSO NOIVADO EM</span><strong>21.11.2026</strong><span>SÁBADO · ÀS 17H</span></div>
           <div class="event-actions"><button id="save-date" type="button">Guardar na agenda ↗</button><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Cortega%C3%A7a+97+Jardim+Guaruj%C3%A1+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div>
           <p class="closing-signature">Com amor, <span>Thais &amp; Jonathan</span></p>
           <span class="closing-note">E que Deus escreva os próximos capítulos.</span>
           <span class="track-credit">Amor Sem Medida · Matheus &amp; Kauan</span>
+        </div>
+      </section>
+      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-title">
+        <div class="rsvp-inner">
+          <span class="rsvp-mark" aria-hidden="true">✧</span>
+          <p class="rsvp-overline">UM ÚLTIMO CARINHO</p>
+          <h2 id="rsvp-title">Você vem celebrar <em>com a gente?</em></h2>
+          <p class="rsvp-intro">Confirme sua presença no nosso noivado.</p>
+          <form id="rsvp-form" class="rsvp-form">
+            <label for="rsvp-name">Seu nome</label>
+            <input id="rsvp-name" name="guest_name" type="text" autocomplete="name" placeholder="Como te chamamos?" maxlength="80" required>
+            <fieldset>
+              <legend>Sua resposta</legend>
+              <label class="rsvp-choice"><input type="radio" name="attending" value="true" required><span>Sim, estarei lá</span></label>
+              <label class="rsvp-choice"><input type="radio" name="attending" value="false" required><span>Não poderei ir</span></label>
+            </fieldset>
+            <button type="submit">Enviar resposta <span aria-hidden="true">↗</span></button>
+            <p id="rsvp-status" class="rsvp-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </div>
@@ -171,5 +191,6 @@
   <script src="memories.js" defer></script>
   <script src="experience.js" defer></script>
   <script src="guestbook.js" defer></script>
+  <script src="rsvp.js" defer></script>
 </body>
 </html>
